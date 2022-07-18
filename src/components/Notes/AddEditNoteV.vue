@@ -5,8 +5,8 @@
       <div class="field">
         <div class="control">
           <textarea
-            :value="modelValue"
-            @input="$emit('update:modelValue', ($event as any).target.value)"
+            v-model="content"
+            @input="$emit('update:content', content)"
             class="textarea"
             ref="textAreaRef"
             :placeholder="placeholder"
@@ -32,7 +32,7 @@ import { vAutofocus } from '@/directives/vAutofocus';
 
 // Props
 type propType = {
-  modelValue: string;
+  content: string;
   bgColor?: string;
   placeholder?: string;
   label?: string;

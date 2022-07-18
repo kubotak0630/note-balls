@@ -13,9 +13,13 @@
       <RouterLink :to="`/editNote/${note.id}`" href="#" class="card-footer-item">Edit</RouterLink>
       <!-- <a @click.prevent="handleEditClicked" href="#" class="card-footer-item">Edit</a> -->
       <!-- <a @click.prevent="handleDeleteClicked" href="#" class="card-footer-item">Delete</a> -->
-      <a @click.prevent="modals.deleteNote = true" href="#" class="card-footer-item">Delete</a>
+      <a @click.prevent="modalsShowFlg = true" href="#" class="card-footer-item">Delete</a>
     </footer>
-    <ModalDeleteNoteV v-if="modals.deleteNote" v-model="modals.deleteNote" :noteId="note.id" />
+    <ModalDeleteNoteV
+      v-if="modalsShowFlg"
+      v-model:modalsShowFlg="modalsShowFlg"
+      :noteId="note.id"
+    />
   </div>
 </template>
 
@@ -48,7 +52,7 @@ const props = defineProps<propType>();
 // }>();
 
 //
-const modals = ref({ deleteNote: false });
+const modalsShowFlg = ref(false);
 
 //
 const router = useRouter();

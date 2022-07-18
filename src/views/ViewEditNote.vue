@@ -1,7 +1,7 @@
 <template>
   <div class="edit-note">
     <AddEditNoteV
-      v-model="noteConetent"
+      v-model:content="noteConetent"
       bgColor="link"
       placeholder="Edit note"
       ref="addEditNoteRef"

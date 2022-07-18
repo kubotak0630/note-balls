@@ -23,7 +23,7 @@ import { onClickOutside } from '@vueuse/core';
 import { useStoreNotes } from '@/stores/storeNotes';
 // Props
 type propType = {
-  modelValue: boolean;
+  modalsShowFlg: boolean;
   noteId: string;
 };
 
@@ -31,12 +31,12 @@ const props = defineProps<propType>();
 
 // Emits:
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: boolean): void;
+  (e: 'update:modalsShowFlg', value: boolean): void;
 }>();
 
 //
 const closeModal = () => {
-  emit('update:modelValue', false);
+  emit('update:modalsShowFlg', false);
 };
 
 // use onClickOutside(外側をクリックしたときに消す)
